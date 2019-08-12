@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyHelmShoei</string>
+    <string name="action_list">action_list</string>
+    <string name="grid">Grid</string>
+    <string name="list">List</string>
+    <string name="cardview">Cardview</string>
+    <string name="helm_name">Helm Name</string>
+    <string name="feature_helm">Feature Helm</string>
+    <string name="price_helm">Price Helm</string>
+</resources>
