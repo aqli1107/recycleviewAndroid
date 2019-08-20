@@ -9,6 +9,10 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
+import space.ahammdan.myhelmshoei.adapter.HelmAdapter;
+import space.ahammdan.myhelmshoei.model.HelmShoei;
+import space.ahammdan.myhelmshoei.model.HelmShoeiData;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rv_helm;
@@ -29,19 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void showListRv() {
         rv_helm.setLayoutManager(new LinearLayoutManager(this));
-        HelmAdapter heroAdapter = new HelmAdapter(list);
+        HelmAdapter heroAdapter = new HelmAdapter(list, this);
         rv_helm.setAdapter(heroAdapter);
     }
 
-    private void showCardRv(){
-        rv_helm.setLayoutManager(new LinearLayoutManager(this));
-        CardHelmAdapter cardHeroAdapter = new CardHelmAdapter(list);
-        rv_helm.setAdapter(cardHeroAdapter);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -52,13 +50,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setMode(int itemId) {
-        switch (itemId){
-            case R.id.action_list:
-            showListRv();
-            break;
-            case R.id.action_cardview:
-            showCardRv();
-            break;
-        }
+
     }
 }
